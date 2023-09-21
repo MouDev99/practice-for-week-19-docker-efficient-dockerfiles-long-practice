@@ -1,6 +1,6 @@
 FROM node:10-alpine
 
-ADD . /app
+COPY . /app
 
 RUN apk update \
 && apk add npm nodejs \
