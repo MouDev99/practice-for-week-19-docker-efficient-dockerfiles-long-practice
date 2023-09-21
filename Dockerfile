@@ -1,9 +1,9 @@
-FROM ubuntu:18.04
+FROM node:10-alpine
 
 ADD . /app
 
-RUN apt-get update \
-&& DEBIAN_FRONTEND=noninteractive apt-get install -y npm nodejs \
+RUN apk update \
+&& apk add npm nodejs \
 && cd /app && npm install
 
 CMD cd /app && npm start
